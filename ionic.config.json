@@ -1,0 +1,7 @@
+{
+  "name": "background-removal-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

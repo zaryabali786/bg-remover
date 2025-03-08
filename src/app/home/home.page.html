@@ -1,0 +1,76 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>Background Remover</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Upload Image</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+      <ion-button expand="full" (click)="processImage()" [disabled]="!selectedFile">Remove Background</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <div *ngIf="processedImage">
+    <h3>Processed Image:</h3>
+    <img [src]="processedImage" alt="Processed Image" />
+    <ion-button expand="full" (click)="downloadImage()">Download Image</ion-button>
+  </div>
+</ion-content> -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Background Remover</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Upload Image</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <input type="file" #fileInput (change)="onFileSelected($event)" accept="image/*" hidden />
+      <ion-button expand="full" (click)="fileInput.click()">Choose Image</ion-button>
+
+      <div *ngIf="selectedImage">
+        <h3>Selected Image:</h3>
+        <img [src]="selectedImage" alt="Selected Image" />
+      </div>
+
+      <ion-button expand="full" (click)="processImage()" [disabled]="!selectedFile">Remove Background</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <div *ngIf="processedImage">
+    <h3>Processed Image:</h3>
+    <img [src]="processedImage" alt="Processed Image" />
+    <ion-button expand="full" (click)="downloadImage()">Download Image</ion-button>
+  </div>
+
+
+
+
+  <div class="record-container">
+    <button (click)="startRecording()" [disabled]="isRecording">🎙️ Start Recording</button>
+    <button (click)="stopRecording()" [disabled]="!isRecording">⏹️ Stop Recording</button>
+
+    <audio *ngIf="audioUrl" [src]="audioUrl" controls></audio>
+
+    <button (click)="sendAudio()" [disabled]="!audioUrl">📤 Send</button>
+
+    <div *ngIf="urduText || englishTranslation" class="translation-container">
+      <h3>📝 Urdu Text</h3>
+      <p class="urdu-text">{{ urduText }}</p>
+
+      <h3>🔄 English Translation</h3>
+      <p class="english-text">{{ englishTranslation }}</p>
+    </div>
+  </div>
+
+
+
+</ion-content>
