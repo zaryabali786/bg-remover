@@ -42,7 +42,7 @@
     "cordova-plugin-media": "^7.0.0",
     "cordova-plugin-media-capture": "^6.0.0",
     "ionicons": "^7.0.0",
-    "rxjs": "^6.6.7",
+    "rxjs": "^7.8.1",
     "svelte": "^5.22.5",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
